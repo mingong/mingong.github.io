@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html lang="en"  >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>Webview2 in Wpf | My Awesome Book {#mainpage}</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.9">
+        
+        
+        
+        
+    
+    
+        <link rel="stylesheet" href="gitbook/ebook.css">
+    
+
+    
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/ebook.css">
+        
+    
+
+    
+    
+
+        
+    </head>
+    <body class="dir-">
+        
+        
+<div class="page">
+    
+        <h1 class="book-chapter book-chapter-1">Webview2 in Wpf</h1>
+        
+            <div class="section normal" id="section-">
+            
+                <hr>
+<p>layout: post</p>
+<p>title: Webview2 in Wpf</p>
+<p>date: 2015-9-30 16:16</p>
+<p>category: blog</p>
+<p>tags:</p>
+<ul>
+<li><p>C#</p>
+</li>
+<li><p>Wpf</p>
+</li>
+<li><p>JavaScript</p>
+</li>
+</ul>
+<h2 id="slug-webview2inwpf">slug: webview2-in-wpf</h2>
+<h1 id="webview2-in-wpf">Webview2 in Wpf</h1>
+<h3 id="&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x770B;&#x8138;&#x7684;&#x65F6;&#x4EE3;">&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x770B;&#x8138;&#x7684;&#x65F6;&#x4EE3;</h3>
+<p>&#x968F;&#x7740;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x7684;&#x5D1B;&#x8D77;, Windows &#x5E94;&#x7528;&#x5DF2;&#x7ECF;&#x88AB;&#x9010;&#x6E10;&#x8FB9;&#x7F18;&#x5316;, &#x65E5;&#x5E38;&#x751F;&#x6D3B;&#x4E2D;&#x5927;&#x90E8;&#x5206;&#x4E8B;&#x60C5;&#x4E0D;&#x7528;&#x6253;&#x5F00;&#x7535;&#x8111;&#x4E86;, 
+&#x638F;&#x51FA;&#x624B;&#x673A;&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;. &#x4F46;&#x662F;Windows &#x5E94;&#x7528;&#x7EC8;&#x7A76;&#x8FD8;&#x662F;&#x8981;&#x6709;&#x7684;, &#x5BF9;&#x6CA1;&#x9519;, &#x6211;&#x4ECA;&#x5929;&#x5C31;&#x662F;&#x6765;&#x8BB2;Windows &#x5E94;&#x7528;&#x5F00;&#x53D1;&#x7684;.</p>
+<p>&#x6700;&#x8FD1;&#x6709;&#x505A;&#x8FC7;&#x4E00;&#x4E2A;Windows &#x4E0A;&#x7684;&#x5E94;&#x7528;, &#x5927;&#x81F4;&#x662F;&#x4E2A;&#x7F16;&#x8F91;&#x5668;. &#x65E2;&#x7136;&#x662F;&#x505A;Windows &#x5E94;&#x7528;, &#x90A3;&#x4E48;&#x4E00;&#x5B9A;&#x8981;&#x796D;&#x51FA;VS&#x795E;&#x5668;,
+&#x4F46;&#x662F;&#x6709;&#x4E00;&#x4E2A;&#x95EE;&#x9898;: &#x592A;&#x4E11;&#x4E86;.</p>
+<p>&#x6258;&#x4E92;&#x8054;&#x7F51;&#x84EC;&#x52C3;&#x53D1;&#x5C55;&#x7684;&#x798F;, Web &#x9875;&#x9762;&#x8D8A;&#x6765;&#x8D8A;&#x6F02;&#x4EAE;, &#x4F20;&#x7EDF;&#x7684;Windows &#x63A7;&#x4EF6;&#x7531;&#x4E8E;&#x5B9A;&#x5236;&#x6027;&#x4E0D;&#x5F3A;, &#x5728;&#x8FD9;&#x4E2A;&#x770B;&#x8138;&#x7684;&#x65F6;&#x4EE3;,
+&#x663E;&#x7136;&#x662F;&#x5165;&#x4E0D;&#x4E86;&#x4EBA;&#x4EEC;&#x7684;&#x6CD5;&#x773C;&#x7684;. &#x4E8E;&#x662F;&#x6709;&#x5927;&#x628A;&#x5927;&#x628A;&#x7684;Windows &#x5E94;&#x7528;&#x8BBE;&#x8BA1;&#x90FD;&#x5F00;&#x59CB;&#x5F80;Web &#x4E0A;&#x9760;.</p>
+<p>&#x7531;&#x4E8E;&#x505A;&#x8FC7;&#x4E00;&#x70B9;&#x524D;&#x7AEF;, &#x6211;&#x4E00;&#x5F00;&#x59CB;&#x5C31;&#x7422;&#x78E8;&#x600E;&#x4E48;&#x7528;Web &#x9875;&#x9762;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;, &#x8FD9;&#x6837;&#x6837;&#x5F0F;&#x4E5F;&#x7092;&#x9E21;&#x597D;&#x8C03;, &#x529F;&#x80FD;&#x4E5F;&#x597D;&#x52A0;.</p>
+<p>&#x6211;&#x770B;&#x4E86;<a href="https://www.electronjs.org/" target="_blank">Electron</a> , Atom&#x7684;&#x6838;, &#x4E00;&#x4E2A;&#x57FA;&#x4E8E;Web &#x6280;&#x672F;&#x7684;&#x8DE8;&#x5E73;&#x53F0;&#x684C;&#x9762;&#x5E94;&#x7528;&#x5F00;&#x53D1;&#x6846;&#x67B6;.
+&#x5F88;&#x597D;&#x5F88;&#x597D;, &#x5C1D;&#x8BD5;&#x4E86;&#x4E00;&#x4E0B;, &#x5C31;&#x662F;&#x6253;&#x5305;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x6709;&#x70B9;&#x592A;&#x5927;&#x4E86;.</p>
+<p>&#x7EC8;&#x4E8E;&#x53D1;&#x73B0;&#x4E86;&#x4ECA;&#x5929;&#x7684;&#x4E3B;&#x89D2;: WebView2.
+WebView2&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;Chromium
+&#x7684;&#x96C6;&#x6210;&#x6D4F;&#x89C8;&#x5668;&#x6846;&#x67B6;, &#x5C31;&#x662F;&#x4E3A;&#x5728;&#x684C;&#x9762;&#x5E94;&#x7528;&#x91CC;&#x6DFB;&#x52A0;&#x73B0;&#x4EE3;&#x6D4F;&#x89C8;&#x5668;&#x63A7;&#x4EF6;&#x800C;&#x751F;, &#x6548;&#x7387;&#x5F88;&#x9AD8;, &#x63A5;&#x8FD1;Chrome.
+<a href="https://docs.microsoft.com/en-us/microsoft-edge/webview2/" target="_blank">WebView2</a>.</p>
+<p>WebView2&#x975E;&#x5E38;&#x6613;&#x7528;, &#x6709;&#x4E86;&#x4ED6;&#x5206;&#x5206;&#x949F;&#x53EF;&#x4EE5;&#x505A;&#x4E2A;Chrome&#x51FA;&#x6765;. &#x4F60;&#x53EF;&#x4EE5;&#x53BB;&#x5B83;&#x7684;GitHub&#x9875;&#x9762;&#x4E0A;&#x7FFB;&#x7FFB;&#x4F8B;&#x5B50;.
+&#x8FD9;&#x91CC;&#x662F;&#x9879;&#x76EE;&#x7684;<a href="https://docs.microsoft.com/en-us/microsoft-edge/webview2/" target="_blank">&#x8BF4;&#x660E;</a>.</p>
+<h3 id="&#x5B89;&#x88C5;webview2">&#x5B89;&#x88C5;WebView2</h3>
+<p>WebView2&#x53EF;&#x901A;&#x8FC7;<a href="https://www.nuget.org/" target="_blank">NuGet</a> &#x5B89;&#x88C5;, &#x5982;&#x679C;&#x5B89;&#x88C5;&#x4E86;
+NuGet , &#x5728;<code>Project &gt; Manage NuGet Packages</code> &#x91CC;&#x6253;&#x5F00;&#x5305;&#x7BA1;&#x7406;&#x5668;, &#x641C;&#x7D22;Microsoft.Web.WebView2, &#x5B89;&#x88C5;<code>Microsoft.Web.WebView2</code>,
+&#x8FD9;&#x6837;&#x4F1A;&#x81EA;&#x52A8;&#x5B89;&#x88C5;&#x4F9D;&#x8D56;, &#x5E76;&#x4E14;&#x5B89;&#x88C5;&#x5B8C;&#x4E4B;&#x540E;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x4E3A;&#x9879;&#x76EE;&#x7684;&#x5F15;&#x7528;.</p>
+<h3 id="&#x4F7F;&#x7528;-webview2">&#x4F7F;&#x7528; WebView2</h3>
+<p>&#x6548;&#x679C;&#x56FE;:</p>
+<p><img src="wpf.png" alt="MainWindow"></p>
+<h3 id="&#x52A0;&#x8F7D;&#x5728;&#x7EBF;&#x8D44;&#x6E90;">&#x52A0;&#x8F7D;&#x5728;&#x7EBF;&#x8D44;&#x6E90;</h3>
+<p>&#x5173;&#x4E8E;&#x9875;&#x9762;&#x662F;&#x4E2A;&#x7F51;&#x9875;, &#x96C6;&#x6210;&#x8D77;&#x6765;&#x5341;&#x5206;&#x7B80;&#x5355;, &#x5B89;&#x88C5;</p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> Microsoft.Web.WebView2.Core;
+
+<span class="hljs-comment">/* ... */</span>
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">AboutWindow</span>(<span class="hljs-params"></span>)
+        </span>{
+            InitializeComponent();
+
+            InitializeAsync();
+
+            webView.Source = <span class="hljs-keyword">new</span> Uri(<span class="hljs-string">&quot;http://localhost:4000&quot;</span>);
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">async</span> <span class="hljs-keyword">void</span> <span class="hljs-title">InitializeAsync</span>(<span class="hljs-params"></span>)
+        </span>{
+            <span class="hljs-comment">// must create a data folder if running out of a secured folder that can&apos;t write like Program Files</span>
+            CoreWebView2Environment env = <span class="hljs-keyword">await</span> CoreWebView2Environment.CreateAsync(userDataFolder: System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), System.IO.Path.GetFileName(System.Windows.Forms.Application.ExecutablePath) + <span class="hljs-string">&quot;.&quot;</span> + <span class="hljs-string">&quot;WebView2&quot;</span>));
+            <span class="hljs-keyword">await</span> webView.EnsureCoreWebView2Async(env);
+        }
+</code></pre>
+<p>&#x7136;&#x540E;&#x6548;&#x679C;&#x5C31;&#x662F;&#x8FD9;&#x6837;, &#x8FD9;&#x53EF;&#x662F;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;Chromium&#x54E6;, &#x5988;&#x5988;&#x518D;&#x4E5F;&#x4E0D;&#x62C5;&#x5FC3;&#x6211;&#x4E0D;&#x4F1A;&#x505A;&#x6D4F;&#x89C8;&#x5668;&#x4E86;:</p>
+<p><img src="about.png" alt="About"></p>
+<h3 id="&#x52A0;&#x8F7D;&#x672C;&#x5730;&#x8D44;&#x6E90;">&#x52A0;&#x8F7D;&#x672C;&#x5730;&#x8D44;&#x6E90;</h3>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8981;&#x505A;&#x4E00;&#x4E2A;&#x672C;&#x5730;&#x5E94;&#x7528;, &#x4E0D;&#x80FD;&#x8054;&#x7F51;, &#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x4F1A;&#x628A;&#x6240;&#x6709;&#x7684;&#x8D44;&#x6E90;&#x8EB2;&#x653E;&#x5230;&#x672C;&#x5730;, &#x7136;&#x540E;&#x4ECE;&#x672C;&#x5730;&#x8FDB;&#x884C;&#x52A0;&#x8F7D;.</p>
+<p>&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x4F7F;&#x7528;<a href="https://purecss.io/" target="_blank">Pure.css</a> &#x6765;&#x505A;&#x4E00;&#x4E2A;&#x6781;&#x7B80;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;, &#x6211;&#x4EEC;&#x5148;&#x5199;&#x597D;&#x9875;&#x9762;:</p>
+<pre><code class="lang-html"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">&quot;utf-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">&quot;stylesheet&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;./pure-min.css&quot;</span> <span class="hljs-attribute">media</span>=<span class="hljs-value">&quot;screen&quot;</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">&quot;no title&quot;</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">&quot;utf-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>editor<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">style</span> <span class="hljs-attribute">media</span>=<span class="hljs-value">&quot;screen&quot;</span>&gt;</span><span class="css">
+      <span class="hljs-tag">body</span>, <span class="hljs-tag">html</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">100%</span></span></span>;
+      }</span>
+
+      <span class="hljs-tag">form</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">100%</span></span></span>;
+      }</span>
+
+      <span class="hljs-tag">button</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">40px</span></span></span>;
+      }</span>
+
+      <span class="hljs-tag">textarea</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-function">calc</span>(<span class="hljs-number">100%</span> - <span class="hljs-number">40px</span>)</span></span>;
+      }</span>
+    </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pure-form&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">textarea</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;editor&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pure-input-1&quot;</span> <span class="hljs-attribute">aria-label</span>=<span class="hljs-value">&quot;textarea&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">textarea</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;submit&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pure-button pure-input-1 pure-button-primary&quot;</span>&gt;</span>Save<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<p>&#x6548;&#x679C;&#x5F88;&#x7B80;&#x5355;, &#x5C31;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x6846;, &#x4E00;&#x4E2A;&#x4FDD;&#x5B58;&#x6309;&#x94AE;:</p>
+<p><img src="editor.png" alt="Editor"></p>
+<p>&#x6DFB;&#x52A0;<code>wen</code> &#x6587;&#x4EF6;&#x5939;, &#x628A;&#x9759;&#x6001;&#x9875;&#x9762;&#x90FD;&#x653E;&#x8FDB;&#x53BB;, &#x8BB0;&#x4F4F;&#x8981;&#x5728;&#x9879;&#x76EE;&#x5C5E;&#x6027;&#x91CC;&#x9009;&#x62E9;&#x5C06;&#x8FD9;&#x4E9B;&#x9759;&#x6001;&#x9875;&#x9762;&#x62F7;&#x8D1D;&#x5230;&#x8F93;&#x51FA;&#x76EE;&#x5F55;, 
+&#x4E0D;&#x7136;&#x7A0B;&#x5E8F;&#x8DD1;&#x8D77;&#x6765;&#x5C31;&#x627E;&#x4E0D;&#x5230;&#x8FD9;&#x4E9B;&#x9875;&#x9762;&#x4E86;.</p>
+<p><code>WebView2</code>&#x53EF;&#x4EE5;&#x52A0;&#x8F7D;&#x672C;&#x5730;&#x6587;&#x4EF6;, &#x4F7F;&#x7528;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;:</p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> Microsoft.Web.WebView2.Core;
+
+<span class="hljs-comment">/* ... */</span>
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MainWindow</span>(<span class="hljs-params"></span>)
+        </span>{
+            InitializeComponent();
+
+            InitializeAsync();
+
+            <span class="hljs-comment">// Using a file URL</span>
+            webView.Source = <span class="hljs-keyword">new</span> Uri(System.IO.Path.Combine(System.Windows.Forms.Application.StartupPath, <span class="hljs-string">@&quot;wen\editor.html&quot;</span>));
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">async</span> <span class="hljs-keyword">void</span> <span class="hljs-title">InitializeAsync</span>(<span class="hljs-params"></span>)
+        </span>{
+            <span class="hljs-comment">// must create a data folder if running out of a secured folder that can&apos;t write like Program Files</span>
+            CoreWebView2Environment env = <span class="hljs-keyword">await</span> CoreWebView2Environment.CreateAsync(userDataFolder: System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), System.IO.Path.GetFileName(System.Windows.Forms.Application.ExecutablePath) + <span class="hljs-string">&quot;.&quot;</span> + <span class="hljs-string">&quot;WebView2&quot;</span>));
+
+            <span class="hljs-keyword">await</span> webView.EnsureCoreWebView2Async(env);
+        }
+</code></pre>
+<h3 id="&#x4E0E;javascript&#x8FDB;&#x884C;&#x4EA4;&#x4E92;">&#x4E0E;JavaScript&#x8FDB;&#x884C;&#x4EA4;&#x4E92;</h3>
+<p>&#x9879;&#x76EE;&#x91CC;&#x90FD;&#x7528;&#x4E86;&#x524D;&#x7AEF;&#x5199;, &#x5982;&#x679C;&#x4E0D;&#x80FD;&#x7528;JavaScript&#x90A3;&#x7B80;&#x76F4;&#x548C;&#x6CA1;&#x7528;&#x4E00;&#x6837;&#x554A;, &#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B;&#x4E0E;JavaScript&#x7684;&#x4EA4;&#x4E92;, 
+&#x5305;&#x62EC;</p>
+<h3 id="&#x5728;c&#x91CC;&#x8C03;&#x7528;javascript&#x4EE3;&#x7801;">&#x5728;C#&#x91CC;&#x8C03;&#x7528;JavaScript&#x4EE3;&#x7801;</h3>
+<p>&#x7B80;&#x5355;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;:</p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">using</span> Microsoft.Web.WebView2.Core;
+
+<span class="hljs-comment">/* ... */</span>
+
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">bool</span> CoreWebView2InitializationCompleted = <span class="hljs-keyword">false</span>;
+
+        <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">CsCallJs1</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ExecutedRoutedEventArgs e</span>)
+        </span>{
+            <span class="hljs-keyword">if</span> (webView != <span class="hljs-keyword">null</span> &amp;&amp; CoreWebView2InitializationCompleted)
+            {
+                _ = webView.ExecuteScriptAsync($<span class="hljs-string">&quot;csCallJs1();&quot;</span>);
+            }
+        }
+</code></pre>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x8FD4;&#x56DE;&#x503C;, &#x4E0D;&#x5982;&#x6211;&#x4EEC;&#x5199;&#x4E00;&#x4E2A;&#x83B7;&#x53D6;&#x9AD8;&#x5EA6;&#x7684;&#x51FD;&#x6570;:</p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">using</span> Microsoft.Web.WebView2.Core;
+
+<span class="hljs-comment">/* ... */</span>
+
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">bool</span> CoreWebView2InitializationCompleted = <span class="hljs-keyword">false</span>;
+
+        <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">void</span> <span class="hljs-title">CsCallJs2</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ExecutedRoutedEventArgs e</span>)
+        </span>{
+            <span class="hljs-keyword">if</span> (webView != <span class="hljs-keyword">null</span> &amp;&amp; CoreWebView2InitializationCompleted)
+            {
+                <span class="hljs-keyword">object</span> result = <span class="hljs-keyword">await</span> webView.ExecuteScriptAsync(<span class="hljs-string">@&quot;
+(function() {
+    var body = document.body, html = document.documentElement;
+
+    return Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,
+                    html.scrollHeight, html.offsetHeight);
+})();&quot;</span>);
+
+                _ = System.Windows.MessageBox.Show(<span class="hljs-string">&quot;WpfWebView2Playground&quot;</span> + <span class="hljs-string">&quot;:&quot;</span> + <span class="hljs-string">&quot; &quot;</span> + <span class="hljs-string">&quot;result&quot;</span> + <span class="hljs-string">&quot;,&quot;</span> + <span class="hljs-string">&quot; &quot;</span> + result, <span class="hljs-string">&quot;WPF Window&quot;</span>);
+
+                _ = webView.Focus();
+            }
+        }
+</code></pre>
+<p>&#x4E0D;&#x8FC7;&#x8FD9;&#x91CC;&#x53EA;&#x80FD;&#x8FD4;&#x56DE;&#x7B80;&#x5355;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;, &#x4E0D;&#x80FD;&#x8FD4;&#x56DE;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x590D;&#x6742;&#x5BF9;&#x8C61;, &#x5982;&#x679C;&#x9700;&#x8981;&#x590D;&#x6742;&#x7C7B;&#x578B;, &#x53EF;&#x4EE5;&#x8FD4;&#x56DE;json&#x4E32;, &#x7136;&#x540E;&#x5E8F;&#x5217;&#x5316;&#x6210;C#&#x5BF9;&#x8C61;.</p>
+<h3 id="javascript&#x91CC;&#x8C03;&#x7528;c&#x4EE3;&#x7801;">JavaScript&#x91CC;&#x8C03;&#x7528;C#&#x4EE3;&#x7801;</h3>
+<p>&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x628A;C#&#x5BF9;&#x8C61;&#x66B4;&#x9732;&#x7ED9;JavaScript&#x4F7F;&#x7528;:</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">JavaScriptInterop</span>
+    {
+        <span class="hljs-keyword">public</span> Microsoft.Web.WebView2.Wpf.WebView2 WebView { <span class="hljs-keyword">get</span>; }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">JavaScriptInterop</span>(<span class="hljs-params">Microsoft.Web.WebView2.Wpf.WebView2 webView</span>)
+        </span>{
+            WebView = webView;
+        }
+
+    }
+
+<span class="hljs-comment">/* ... */</span>
+
+<span class="hljs-keyword">using</span> System.Runtime.InteropServices;
+
+<span class="hljs-comment">/* ... */</span>
+
+    <span class="hljs-comment"><span class="hljs-xmlDocTag">///</span> <span class="hljs-xmlDocTag">&lt;summary&gt;</span></span>
+    <span class="hljs-comment"><span class="hljs-xmlDocTag">///</span> Object that gets called from JavaScript</span>
+    <span class="hljs-comment"><span class="hljs-xmlDocTag">///</span> <span class="hljs-xmlDocTag">&lt;/summary&gt;</span></span>
+    [ClassInterface(ClassInterfaceType.AutoDual)]
+    [ComVisible(<span class="hljs-keyword">true</span>)]
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">DotnetInterop</span>
+    {
+        <span class="hljs-keyword">public</span> JavaScriptInterop JsInterop { <span class="hljs-keyword">get</span>; }
+
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> StringProp { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DotnetInterop</span>(<span class="hljs-params">JavaScriptInterop jsInterop</span>)
+        </span>{
+            JsInterop = jsInterop;
+
+            StringProp = <span class="hljs-string">&quot;Hello, WebView2&quot;</span>;
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ShowHelloWebView2</span>(<span class="hljs-params"></span>)
+        </span>{
+            _ = System.Windows.MessageBox.Show(<span class="hljs-string">&quot;WpfWebView2Playground&quot;</span> + <span class="hljs-string">&quot;:&quot;</span> + <span class="hljs-string">&quot; &quot;</span> + <span class="hljs-string">&quot;Hello, WebView2!!!!&quot;</span>, <span class="hljs-string">&quot;WPF Window&quot;</span>);
+
+            SetFocus();
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SetFocus</span>(<span class="hljs-params"></span>)
+        </span>{
+            <span class="hljs-keyword">if</span> (JsInterop.WebView != <span class="hljs-keyword">null</span>)
+            {
+                _ = JsInterop.WebView.Focus();
+            }
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">WpfAlert</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> message</span>)
+        </span>{
+            _ = System.Windows.MessageBox.Show(<span class="hljs-string">&quot;WpfWebView2Playground&quot;</span> + <span class="hljs-string">&quot;:&quot;</span> + <span class="hljs-string">&quot; &quot;</span> + message, <span class="hljs-string">&quot;WPF Window&quot;</span>);
+        }
+    }
+
+<span class="hljs-comment">/* ... */</span>
+
+<span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> Microsoft.Web.WebView2.Core;
+
+<span class="hljs-comment">/* ... */</span>
+
+        <span class="hljs-keyword">public</span> DotnetInterop interop;
+
+        <span class="hljs-keyword">public</span> JavaScriptInterop jsInterop;
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MainWindow</span>(<span class="hljs-params"></span>)
+        </span>{
+            InitializeComponent();
+
+            jsInterop = <span class="hljs-keyword">new</span> JavaScriptInterop(webView);
+            interop = <span class="hljs-keyword">new</span> DotnetInterop(jsInterop);
+
+            InitializeAsync();
+
+            <span class="hljs-comment">// Using a file URL</span>
+            webView.Source = <span class="hljs-keyword">new</span> Uri(System.IO.Path.Combine(System.Windows.Forms.Application.StartupPath, <span class="hljs-string">@&quot;wen\editor.html&quot;</span>));
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">async</span> <span class="hljs-keyword">void</span> <span class="hljs-title">InitializeAsync</span>(<span class="hljs-params"></span>)
+        </span>{
+            <span class="hljs-comment">// must create a data folder if running out of a secured folder that can&apos;t write like Program Files</span>
+            CoreWebView2Environment env = <span class="hljs-keyword">await</span> CoreWebView2Environment.CreateAsync(userDataFolder: System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), System.IO.Path.GetFileName(System.Windows.Forms.Application.ExecutablePath) + <span class="hljs-string">&quot;.&quot;</span> + <span class="hljs-string">&quot;WebView2&quot;</span>));
+
+            <span class="hljs-keyword">await</span> webView.EnsureCoreWebView2Async(env);
+
+            webView.CoreWebView2.AddHostObjectToScript(<span class="hljs-string">&quot;webview2&quot;</span>, interop);
+        }
+</code></pre>
+<p>&#x7136;&#x540E;&#x5728;JavaScript&#x91CC;&#x5C31;&#x53EF;&#x4EE5;&#x653E;&#x8086;&#x4F7F;&#x7528;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x4E86;:</p>
+<pre><code class="lang-javascript">    &lt;script type=&quot;text/javascript&quot;&gt;
+        async function callCs() {
+            // .NET object reference (async)
+            var msg = await window.chrome.webview.hostObjects.webview2.stringProp;
+
+            /*
+            alert(msg);
+
+            */
+            window.chrome.webview.hostObjects.webview2.wpfAlert(msg);
+
+            window.chrome.webview.hostObjects.webview2.showHelloWebView2();
+        }
+    &lt;/script&gt;
+</code></pre>
+<p>&#x6CE8;&#x610F;</p>
+<p>&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;js&#x4EE3;&#x7801;&#x770B;&#x8D77;&#x6765;&#x4E0E;&#x5176;&#x4ED6;&#x90E8;&#x5206;&#x98CE;&#x683C;&#x4E00;&#x81F4;, &#x8FD9;&#x91CC;&#x5728;js&#x91CC;&#x9762;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x6BCD;&#x53D8;&#x6210;&#x4E86;&#x5C0F;&#x5199;.</p>
+<h3 id="devtools">DevTools</h3>
+<p>Chrome/Chromium &#x76F8;&#x5F53;&#x597D;&#x7528;&#x7684;&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7684;.</p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> Microsoft.Web.WebView2.Core;
+
+<span class="hljs-comment">/* ... */</span>
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MainWindow</span>(<span class="hljs-params"></span>)
+        </span>{
+            InitializeComponent();
+
+            InitializeAsync();
+
+            <span class="hljs-comment">// Using a file URL</span>
+            webView.Source = <span class="hljs-keyword">new</span> Uri(System.IO.Path.Combine(System.Windows.Forms.Application.StartupPath, <span class="hljs-string">@&quot;wen\editor.html&quot;</span>));
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">async</span> <span class="hljs-keyword">void</span> <span class="hljs-title">InitializeAsync</span>(<span class="hljs-params"></span>)
+        </span>{
+            <span class="hljs-comment">// must create a data folder if running out of a secured folder that can&apos;t write like Program Files</span>
+            CoreWebView2Environment env = <span class="hljs-keyword">await</span> CoreWebView2Environment.CreateAsync(userDataFolder: System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), System.IO.Path.GetFileName(System.Windows.Forms.Application.ExecutablePath) + <span class="hljs-string">&quot;.&quot;</span> + <span class="hljs-string">&quot;WebView2&quot;</span>));
+
+            <span class="hljs-keyword">await</span> webView.EnsureCoreWebView2Async(env);
+
+            webView.CoreWebView2.OpenDevToolsWindow();
+        }
+</code></pre>
+<p>&#x5B9E;&#x4F8B;&#x9879;&#x76EE;&#x5728;<a href="https://github.com/mingong/WpfWebView2Playground" target="_blank">-&gt; HERE &lt;-</a></p>
+<p>&#x4FDD;&#x5B58;&#x529F;&#x80FD;&#x5C31;&#x6CA1;&#x6709;&#x5199;&#x4E86;.</p>
+<p>&#x1F5D2;&#x1F5D2; <a href="SUMMARY.html">Table of Contents</a></p>
+<p>&#x1F5D2;&#x1F5D2; <a href="install_php_composer_on_windows.html">Prev</a></p>
+<p>&#x1F5D2;&#x1F5D2; <a href="ultraiso_9_71_3519.html">Next</a></p>
+<p>&#x1F5D2;&#x1F5D2; <a href="index.html">Home</a></p>
+
+            
+            </div>
+        
+    
+</div>
+
+        
+        
+    </body>
+    
+</html>
